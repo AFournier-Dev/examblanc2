@@ -8,6 +8,16 @@ body {
     margin: 0;
 }
 
+.propoValeur {
+    color: white;
+    position: absolute;
+    top: 11rem;
+    left: 50%;
+    font-size: 2rem;
+    font-weight: 800;
+    z-index: 1;
+}
+
 ul.barnav {
     list-style-type: none;
     margin: 0;
@@ -19,7 +29,7 @@ ul.barnav {
 
 ul.barnav li {
     float: right;
-    margin-right: 12rem;
+    margin-right: 4rem;
 }
 
 ul.barnav li a {
@@ -41,15 +51,15 @@ ul.barnav li a.actif {
 /*  SLIDER  */
 
 .slider {
-    width: 600px;
+    width: 400px;
     height: 230px;
     position: absolute;
     border: solid 1px #777;
     padding: 0;
     position: absolute;
-    top: 6rem;
+    top: 0rem;
     width: 100%;
-    margin: 150px auto;
+    margin: 180px auto;
     overflow: hidden;
 }
 
@@ -64,8 +74,8 @@ ul.barnav li a.actif {
 }
 
 img {
-    width: 100%;
-    height: 100%;
+    width: 1800px;
+    height: 400px;
 }
 
 @keyframes slide {
@@ -118,11 +128,6 @@ img {
     animation: slide 30s linear infinite;
 }
 
-@media screen and (max-width: 768px) {
-    ul.barnav, ul.barnav li {
-        float: none;
-    }
-}
 
 .title {
     display: flex;
@@ -132,14 +137,30 @@ img {
 
 h2 {
     color: #7ffc02;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 25px;
 }
 
 h1 {
     color: #fb4302;
+    font-size: 48px;
+    position: absolute;
+    top: 10px;
+    left: 25px;
 }
 
 .nav {
     display: inline;
+    position: absolute;
+    top: 7.8rem;
+    left: 27rem;
+    width: 620px;
+}
+
+.navigation {
+    height: 100px;
 }
 
 footer {
@@ -148,4 +169,59 @@ footer {
     width: 98.5%;
     border-top: 3px solid #754614;
     padding-left: 20px;
+}
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    min-height: 25rem;
+    top: 25rem;
+    justify-content: space-around;
+}
+
+span {
+    color: #754614;
+}
+
+h3 {
+    border-bottom: 2px solid #754614;
+}
+
+.webdesignText, .frontendText, .backendText {
+    padding-right: 2vw;
+}
+
+.webdesignText {
+    width: 25vw;
+    padding-left: 5vw;
+}
+
+.frontendText {
+    width: 28vw;
+}
+
+.backendText {
+    width: 24vw;
+}
+
+/*
+.icon {
+    height: 25px;
+    width: 25px;
+}
+*/
+
+/*MOBILE MOBILE */ 
+
+
+@media screen and (max-width: 768px) {
+    ul.barnav, ul.barnav li {
+      h1 {
+          position: absolute;
+          top: 20px;
+          left: 50%;
+      }
+    }
 }

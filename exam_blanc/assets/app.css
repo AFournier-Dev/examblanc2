@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+}
+
+ul.barnav {
+    display: grid;
+    grid-template-areas: 
+    " . h1 h1 . . . . . . . . . " 
+    " . h2 h2 h2 . design . frontend . backend . . ";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #666;
+}
+
+ul.barnav>h1 {
+    grid-area: h1;
+}
+
+ul.barnav>h2 {
+    grid-area: h2;
+    padding
+}
+
+ul.barnav>.design {
+    grid-area: design;
+}
+
+ul.barnav>.frontend {
+    grid-area: frontend;
+}
+
+ul.barnav>.backend {
+    grid-area: backend;
+}
+
+ul.barnav li {
+    float: right;
+}
+
+ul.barnav li a {
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    display: block;
+}
+
+ul.barnav li a:hover:not(.actif) {
+    background-color: #00c;
+}
+
+ul.barnav li a.actif {
+    background-color: #09f;
+}
+
+/*  SLIDER  */
+
+.slider {
+    width: 600px;
+    height: 400px;
+    border: solid 1px #777;
+    padding: 0;
+    position: relative;
+    margin: 150px auto;
+    overflow: hidden;
+}
+
+#liste_images {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+
+img {
+    width: 600px;
+    height: 400px;
+}
+
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+    9% {
+        left: 0;
+    }
+    18% {
+        left: -100%;
+    }
+    27% {
+        left: -100%;
+    }
+    36% {
+        left: -200%;
+    }
+    45% {
+        left: -200%;
+    }
+    54% {
+        left: -300%;
+    }
+    63% {
+        left: -300%;
+    }
+    72% {
+        left: -400%;
+    }
+    81% {
+        left: -400%;
+    }
+    90% {
+        left: -500%;
+    }
+    90% {
+        left: -500%;
+    }
+    99% {
+        left: -500%;
+    }
+    /* à la fin de l’anim, on ramène le bloc au départ très rapidement (en 0001%) et l’animation reprend depuis le début */
+    99.0001% {
+        left: 0;
+    }
+}
+
+#liste_images {
+    animation: slide 10s linear infinite;
+}
+
+@media screen and (max-width: 680px) {
+    ul.barnav, ul.barnav li {
+        float: none;
+    }
+}

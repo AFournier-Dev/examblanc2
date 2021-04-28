@@ -1,48 +1,29 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow-y: hidden;
+}
+
 body {
     margin: 0;
 }
 
 ul.barnav {
-    display: grid;
-    grid-template-areas: 
-    " . h1 h1 . . . . . . . . . " 
-    " . h2 h2 h2 . design . frontend . backend . . ";
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #666;
-}
-
-ul.barnav>h1 {
-    grid-area: h1;
-}
-
-ul.barnav>h2 {
-    grid-area: h2;
-    padding
-}
-
-ul.barnav>.design {
-    grid-area: design;
-}
-
-ul.barnav>.frontend {
-    grid-area: frontend;
-}
-
-ul.barnav>.backend {
-    grid-area: backend;
+    background-color: rgb(255, 255, 255);
+    /*  height: 106px; */
 }
 
 ul.barnav li {
     float: right;
+    margin-right: 12rem;
 }
 
 ul.barnav li a {
-    color: #fff;
+    color: rgb(255, 0, 0);
     text-align: center;
     padding: 1em;
     text-decoration: none;
@@ -50,21 +31,24 @@ ul.barnav li a {
 }
 
 ul.barnav li a:hover:not(.actif) {
-    background-color: #00c;
+    background-color: #7ffc02;
 }
 
 ul.barnav li a.actif {
-    background-color: #09f;
+    background-color: #a72d02;
 }
 
 /*  SLIDER  */
 
 .slider {
     width: 600px;
-    height: 400px;
+    height: 230px;
+    position: absolute;
     border: solid 1px #777;
     padding: 0;
-    position: relative;
+    position: absolute;
+    top: 6rem;
+    width: 100%;
     margin: 150px auto;
     overflow: hidden;
 }
@@ -80,8 +64,8 @@ ul.barnav li a.actif {
 }
 
 img {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
 }
 
 @keyframes slide {
@@ -125,17 +109,43 @@ img {
         left: -500%;
     }
     /* à la fin de l’anim, on ramène le bloc au départ très rapidement (en 0001%) et l’animation reprend depuis le début */
-    99.0001% {
+    99.9999% {
         left: 0;
     }
 }
 
 #liste_images {
-    animation: slide 10s linear infinite;
+    animation: slide 30s linear infinite;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 768px) {
     ul.barnav, ul.barnav li {
         float: none;
     }
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+h2 {
+    color: #7ffc02;
+}
+
+h1 {
+    color: #fb4302;
+}
+
+.nav {
+    display: inline;
+}
+
+footer {
+    position: absolute;
+    top: 95%;
+    width: 98.5%;
+    border-top: 3px solid #754614;
+    padding-left: 20px;
 }
